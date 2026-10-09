@@ -139,13 +139,14 @@ window.PORTFOLIO = {
       period: null,
       category: "NLP",
       color: "#3cffb0",
-      summary: "Detects whether text is English, Tamil or Hindi, with word-level breakdown, readability scoring and translation to English.",
+      summary: "Detects 11 languages, including Tamil, Hindi, Telugu, Kannada, Malayalam, Bengali and Marathi, and runs fully in the browser.",
       points: [
-        "TF-IDF + Logistic Regression classifier trained on a mixed English / Tamil / Hindi dataset, with a rule-based fallback.",
-        "Flask REST API (/predict, /health) returning language and confidence.",
-        "Streamlit dashboard: real-time prediction, word-level language highlighting, Flesch reading-ease and automatic translation."
+        "Character n-gram TF-IDF + Logistic Regression (scikit-learn), detecting 11 languages.",
+        "98.9% accuracy on held-out sentences from Wikipedia articles it never saw.",
+        "Model exported to JSON and run in the browser, matching Python's predictions exactly.",
+        "Word-by-word breakdown for mixed text; also ships as a Flask API and a Streamlit dashboard."
       ],
-      stack: ["Python", "Scikit-learn", "TF-IDF", "Flask", "Streamlit", "React (Vite)"],
+      stack: ["Python", "Scikit-learn", "TF-IDF", "Logistic Regression", "JavaScript", "Flask", "Streamlit", "GitHub Pages"],
       facts: [],
       github: "https://github.com/shivesh900/nlp-project",
       live: "https://shivesh900.github.io/nlp-project/"
@@ -153,17 +154,19 @@ window.PORTFOLIO = {
     {
       id: "trip-planner",
       name: "AI Trip Planner",
-      subtitle: "Full-stack travel planning app",
+      subtitle: "Day-by-day itinerary planner",
       period: null,
       category: "Full-stack",
       color: "#ffb347",
-      summary: "Plan trips by destination, dates, budget and preferences, and get budget-aware suggestions. React front end, Express + MongoDB API, deployed on Vercel.",
+      summary: "Builds day-by-day itineraries from real data with no API key: real sights, live weather, a budget split and a route for each day.",
       points: [
-        "Create, view and manage trips with budget and preference details.",
-        "Budget-aware travel suggestions for each trip.",
-        "REST API with Express and Mongoose on MongoDB Atlas, deployed serverless on Vercel."
+        "Finds sights near the destination from Wikipedia, ranks them for your interests and groups each day by distance.",
+        "Reorders rainy days using live weather.",
+        "Splits the budget by tier and per person per day, makes a packing list and gives a Maps route for each day.",
+        "Optional AI write-up that uses only the planned stops, on a free model or your own Gemini/OpenAI key.",
+        "Optional Express + MongoDB backend."
       ],
-      stack: ["React", "Vite", "Node.js", "Express", "MongoDB Atlas", "Vercel"],
+      stack: ["React", "Vite", "Wikipedia API", "Open-Meteo", "Node.js", "Express", "MongoDB", "GitHub Pages"],
       facts: [],
       github: "https://github.com/shivesh900/genaitripplanner",
       live: "https://shivesh900.github.io/genaitripplanner/"
