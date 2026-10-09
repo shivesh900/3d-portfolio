@@ -52,7 +52,7 @@ export function createRoom(container, P, opts) {
   // neon trims
   const cyan = E("#22e3ff", 3), pink = E("#ff4fd8", 3), violet = E("#8a5cff", 2.5);
   box(12, 0.04, 0.04, cyan, 0, 0.03, -4.97); box(0.04, 0.04, 13, pink, -5.97, 0.03, 1.5); box(0.04, 0.04, 13, pink, 5.97, 0.03, 1.5);
-  box(12, 0.05, 0.05, violet, 0, 5.2, -4.95);
+  box(12, 0.05, 0.05, violet, 0, 5.5, -4.95);
 
   // ---------- desk ----------
   const deskMat = M("#232a52"), legMat = M("#151a38", { metalness: 0.6, roughness: 0.4 });
@@ -72,7 +72,7 @@ export function createRoom(container, P, opts) {
   monitor(1.5, 0.86, 0, 1.62, -4.12, 0, TX.codeScreen(renderer), "about");
   monitor(1.05, 0.82, -1.38, 1.58, -3.95, 0.42, TX.terminalScreen(P, renderer), "about");
   monitor(1.05, 0.82, 1.38, 1.58, -3.95, -0.42, TX.statsScreen(P, renderer), "skills");
-  anchors.push({ pos: new THREE.Vector3(-1.38, 2.12, -3.9), label: "About me", kind: "about" });
+  const aboutAnchor = { pos: new THREE.Vector3(-1.38, 2.12, -3.9), label: "About me", kind: "about" }; anchors.push(aboutAnchor);
   // keyboard, mouse, mug
   box(0.9, 0.03, 0.28, M("#1a1f40"), 0, 1.005, -3.55);
   box(0.86, 0.005, 0.24, E("#8a5cff", 0.6), 0, 1.022, -3.55);
@@ -210,8 +210,8 @@ export function createRoom(container, P, opts) {
   function frame() {
     const w = container.clientWidth, h = container.clientHeight, aspect = w / h;
     camera.aspect = aspect;
-    if (aspect < 0.9) { camera.fov = 62; camGoal.set(0, 3.7, 8.7); controls.target.set(0, 2.15, -1.2); holo.position.set(1.55, 0, 2.5); }
-    else { camera.fov = 48; camGoal.set(0, 2.45, 6.4); controls.target.set(0, 2.15, -1.4); holo.position.set(3.1, 0, 0.9); }
+    if (aspect < 0.9) { camera.fov = 62; camGoal.set(0, 3.5, 8.7); controls.target.set(0, 2.55, -1.2); holo.position.set(1.45, 0, 1.3); sign.position.y = 4.62; sub.position.y = 5.12; aboutAnchor.pos.set(-0.75, 1.25, -3.2); }
+    else { camera.fov = 48; camGoal.set(0, 2.45, 6.4); controls.target.set(0, 2.15, -1.4); holo.position.set(3.1, 0, 0.9); sign.position.y = 4.2; sub.position.y = 4.85; aboutAnchor.pos.set(-1.38, 2.12, -3.9); }
     holoAnchor.pos.set(holo.position.x, 2.75, holo.position.z);
     camera.updateProjectionMatrix();
     layoutPanels(aspect);
