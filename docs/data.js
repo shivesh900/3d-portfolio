@@ -166,7 +166,7 @@ window.PORTFOLIO = {
       stack: ["React", "Vite", "Node.js", "Express", "MongoDB Atlas", "Vercel"],
       facts: [],
       github: "https://github.com/shivesh900/genaitripplanner",
-      live: "https://genaitripplanner-aoza.vercel.app"
+      live: "https://shivesh900.github.io/genaitripplanner/"
     },
     {
       id: "minifier",
