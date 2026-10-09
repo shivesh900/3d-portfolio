@@ -109,7 +109,7 @@ window.PORTFOLIO = {
       stack: ["Python", "RAG", "Random Forest", "Decision Tree", "NLP", "Scikit-learn", "Geospatial APIs"],
       facts: [],
       github: "https://github.com/shivesh900/neurosy-rag",
-      live: null
+      live: "https://shivesh900.github.io/neurosy-rag/"
     },
     {
       id: "resume-scanner",
@@ -130,7 +130,7 @@ window.PORTFOLIO = {
       stack: ["Python", "NLP", "TF-IDF", "Flask", "REST API", "React"],
       facts: ["Scores candidates on skills match, TF-IDF similarity to the job description and experience", "Flask API, React dashboard and a CLI, covered by 29 automated tests"],
       github: "https://github.com/shivesh900/resume-scanner-segregator",
-      live: null
+      live: "https://shivesh900.github.io/resume-scanner-segregator/"
     },
     {
       id: "lang-intel",
