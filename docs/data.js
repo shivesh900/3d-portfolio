@@ -148,7 +148,7 @@ window.PORTFOLIO = {
       stack: ["Python", "Scikit-learn", "TF-IDF", "Flask", "Streamlit", "React (Vite)"],
       facts: [],
       github: "https://github.com/shivesh900/nlp-project",
-      live: null
+      live: "https://shivesh900.github.io/nlp-project/"
     },
     {
       id: "trip-planner",
