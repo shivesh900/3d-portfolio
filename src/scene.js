@@ -195,7 +195,7 @@ export function createRoom(container, P, opts) {
         const x = (j - (row.length - 1) / 2) * 1.3;
         pn.base.set(x, r === 0 ? 3.42 : 2.6, -0.8);
       }));
-      anchors.find(a => a.kind === "projects").pos.set(0, 4.08, -0.8);
+      anchors.find(a => a.kind === "projects").pos.set(0, 4.02, -0.8);
     } else {
       panels.forEach((pn, j) => {
         const x = (j - (n - 1) / 2) * 1.42;
@@ -210,7 +210,7 @@ export function createRoom(container, P, opts) {
   function frame() {
     const w = container.clientWidth, h = container.clientHeight, aspect = w / h;
     camera.aspect = aspect;
-    if (aspect < 0.9) { camera.fov = 62; camGoal.set(0, 3.5, 8.7); controls.target.set(0, 2.55, -1.2); holo.position.set(1.45, 0, 1.3); sign.position.y = 4.62; sub.position.y = 5.12; aboutAnchor.pos.set(-0.75, 1.25, -3.2); }
+    if (aspect < 0.9) { camera.fov = 62; camGoal.set(0, 3.5, 8.7); controls.target.set(0, 2.55, -1.2); holo.position.set(1.45, 0, 1.3); sign.position.y = 4.92; sub.position.y = 5.34; aboutAnchor.pos.set(-0.75, 1.25, -3.2); }
     else { camera.fov = 48; camGoal.set(0, 2.45, 6.4); controls.target.set(0, 2.15, -1.4); holo.position.set(3.1, 0, 0.9); sign.position.y = 4.2; sub.position.y = 4.85; aboutAnchor.pos.set(-1.38, 2.12, -3.9); }
     holoAnchor.pos.set(holo.position.x, 2.75, holo.position.z);
     camera.updateProjectionMatrix();
