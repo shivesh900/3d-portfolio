@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shivesh Haran P · 3D Developer Portfolio</title>
+<meta name="description" content="Shivesh Haran P: final-year B.Tech CSE student at SRM (CGPA 8.45), building AI/ML systems, full-stack apps and UI/UX. Explore his 3D developer room, open the floating project panels and ask his holographic assistant.">
+<meta name="theme-color" content="#060818">
+<meta property="og:title" content="Shivesh Haran P · 3D Developer Portfolio">
+<meta property="og:description" content="AI/ML · Full-stack · UI/UX. Explore the dev room, open the project panels, ask the hologram.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shivesh900.github.io/3d-portfolio/">
+<meta property="og:image" content="https://shivesh900.github.io/3d-portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<link rel="modulepreload" href="js/main.js">
+</head>
+<body>
+<div id="loader" role="status" aria-live="polite">
+  <div class="loader-inner">
+    <div class="loader-orb" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="loader-title">SHIVESH<span>.dev</span></p>
+    <div class="load-track"><div id="load-bar"></div></div>
+    <p id="load-text">Booting the dev room…</p>
+  </div>
+</div>
+
+<main id="app">
+  <div id="stage" aria-label="Interactive 3D developer room. Drag to look around, tap objects to open them."></div>
+  <div id="labels" aria-label="Room hotspots"></div>
+
+  <header class="hud-top">
+    <div class="id">
+      <h1 id="hud-name">Shivesh Haran P</h1>
+      <p id="hud-role">AI/ML Developer · Full-Stack · UI/UX</p>
+    </div>
+    <p id="hud-badge" class="badge">Open to roles · Campus hiring 2027</p>
+  </header>
+
+  <p class="hint" aria-hidden="true"><span class="drag">Drag to look around</span> · <span>Tap panels &amp; objects</span></p>
+
+  <nav class="dock" aria-label="Main actions">
+    <button id="ask-btn" class="dock-btn accent" type="button"><span class="ico orb-ico" aria-hidden="true"></span>Ask AI</button>
+    <button id="projects-btn" class="dock-btn" type="button"><span class="ico" aria-hidden="true">◇</span>Projects</button>
+    <button id="quick-btn" class="dock-btn" type="button"><span class="ico" aria-hidden="true">☰</span>Quick view</button>
+    <a id="resume-btn" class="dock-btn" href="assets/Shivesh_Haran_P_Resume.pdf" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">⤓</span>Resume</a>
+  </nav>
+
+  <section id="chat" aria-label="Holographic assistant" aria-hidden="true">
+    <header><span class="orb-ico big" aria-hidden="true"></span><div><b>NOVA</b><small>Shivesh's holographic assistant · runs offline in your browser</small></div><button id="chat-close" class="x" type="button" aria-label="Close assistant">×</button></header>
+    <div id="chat-log" aria-live="polite"></div>
+    <form id="chat-form" autocomplete="off"><input id="chat-input" type="text" placeholder="Ask about projects, skills, CGPA…" aria-label="Ask the assistant" maxlength="200" enterkeyhint="send"><button type="submit" aria-label="Send">➤</button></form>
+  </section>
+</main>
+
+<div id="sheet" hidden role="dialog" aria-modal="true" aria-label="Details">
+  <div class="sheet-card"><button id="sheet-close" class="x" type="button" aria-label="Close">×</button><div id="sheet-body"></div></div>
+</div>
+
+<div id="quick" hidden role="dialog" aria-modal="true" aria-label="Recruiter quick view">
+  <div class="quick-bar"><span>Recruiter quick view</span><button id="quick-close" class="btn" type="button">Back to 3D room</button></div>
+  <div id="quick-body" class="quick-body"></div>
+</div>
+
+<noscript><div class="noscript"><h1>Shivesh Haran P</h1><p>AI/ML Developer · Full-Stack · UI/UX · B.Tech CSE, SRM (CGPA 8.45), graduating 2027.</p><p>This portfolio needs JavaScript. Resume: <a href="assets/Shivesh_Haran_P_Resume.pdf">PDF</a> · <a href="https://github.com/shivesh900">GitHub</a> · <a href="mailto:shiveshharan900@gmail.com">shiveshharan900@gmail.com</a></p></div></noscript>
+
+<script src="data.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
