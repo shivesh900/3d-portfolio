@@ -164,7 +164,7 @@ export function createRoom(container, P, opts) {
     core.scale.setScalar(s); core.rotation.y += dt * 0.6; core.rotation.x += dt * 0.25;
     shell.rotation.y -= dt * 0.3; shell.rotation.z += dt * 0.15;
     const bob = Math.sin(t * 1.4) * 0.06; [core, shell, r1, r2, glow].forEach(o => o.position.y = 1.75 + bob); eyes.position.y = 1.8 + bob;
-    r1.rotation.set(t * 0.7, t * 0.4, 0); r2.rotation.set(-t * 0.5, 0, t * 0.6);
+    r1.rotation.set(Math.PI / 2 + Math.sin(t * 0.8) * 0.35, Math.cos(t * 0.6) * 0.3, 0); r2.rotation.set(Math.PI / 2 + Math.cos(t * 0.7) * 0.45, 0, Math.sin(t * 0.5) * 0.4);
     core.material.emissiveIntensity = speaking > 0 ? 2.6 + Math.sin(t * 20) * 0.6 : 1.8;
     glow.material.opacity = speaking > 0 ? 1 : 0.75; beamMat.opacity = 0.08 + Math.sin(t * 3) * 0.03 + (speaking > 0 ? 0.06 : 0);
     // blink
