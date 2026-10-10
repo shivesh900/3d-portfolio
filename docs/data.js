@@ -225,6 +225,24 @@ window.PORTFOLIO = {
       facts: [],
       github: "https://github.com/shivesh900/clash-royale-hub",
       live: "https://shivesh900.github.io/clash-royale-hub/"
+    },
+    {
+      id: "sh-valo-tracker",
+      name: "SH VALO TRACKER",
+      subtitle: "Valorant player tracker, web + Android app",
+      period: "Oct 2026",
+      category: "Gaming · Web + PWA + Android",
+      color: "#ff4655",
+      summary: "A Valorant player tracker: anyone enters a Riot ID and region and sees rank and RR, peak rank, act K/D, HS%, win rate, ACS, top agents and the last 10 matches. Installs as an offline PWA and as a signed Android app.",
+      points: [
+        "Player lookup by Riot ID + region: rank and RR, peak rank, act K/D, HS%, win rate, ACS, top agents and the last 10 matches, from a live stats API.",
+        "Game tools built on valorant-api.com data: agents browser, maps with callouts, a weapons damage table, a team comp builder with shareable links, and a crosshair code library with live canvas previews.",
+        "Installable PWA with an offline service worker, plus a signed Android APK built as a Trusted Web Activity with Bubblewrap."
+      ],
+      stack: ["JavaScript", "PWA", "Service Worker", "Android (TWA)", "REST API", "GitHub Pages"],
+      facts: [],
+      github: "https://github.com/shivesh900/sh-valo-tracker",
+      live: "https://shivesh900.github.io/sh-valo-tracker/"
     }
   ],
 

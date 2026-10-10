@@ -1,4 +1,4 @@
-import{A as k,C as d,D as c,H as W,_ as j,ca as K,d as y,e as F,f as D,g as N,h as z,i as L,j as I,k as O,l as g,n as Q,p as l,q as V,r as v,t as T,v as m,w as H,y as B,z as G}from"./chunk-VHVPNLJX.js";var M={name:"CopyShader",uniforms:{tDiffuse:{value:null},opacity:{value:1}},vertexShader:`
+import{A as k,C as d,D as c,H as W,_ as j,ca as K,d as y,e as F,f as D,g as N,h as z,i as L,j as I,k as O,l as g,n as Q,p as l,q as V,r as v,t as T,v as m,w as H,y as B,z as G}from"./chunk-47S5JGZJ.js";var M={name:"CopyShader",uniforms:{tDiffuse:{value:null},opacity:{value:1}},vertexShader:`
 
 		varying vec2 vUv;
 

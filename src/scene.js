@@ -193,12 +193,15 @@ export function createRoom(container, P, opts) {
       const rows = [panels.slice(0, 4), panels.slice(4)];
       rows.forEach((row, r) => row.forEach((pn, j) => {
         const x = (j - (row.length - 1) / 2) * 1.3;
-        pn.base.set(x, r === 0 ? 3.42 : 2.6, -0.8);
+        pn.s = 1; pn.base.set(x, r === 0 ? 3.42 : 2.6, -0.8);
       }));
       anchors.find(a => a.kind === "projects").pos.set(0, 4.02, -0.8);
     } else {
+      // more than 7 panels: pack closer, shrink slightly and nudge left so the last one clears the Skills / NOVA labels
+      const step = Math.min(1.42, 8.2 / Math.max(1, n - 1)), s = Math.min(1, (step - 0.12) / 1.22), dx = n > 7 ? -0.3 : 0;
       panels.forEach((pn, j) => {
-        const x = (j - (n - 1) / 2) * 1.42;
+        pn.s = s;
+        const x = (j - (n - 1) / 2) * step + dx;
         pn.base.set(x, 2.95 + (j % 2 ? 0.2 : -0.06), -0.9 - 0.025 * x * x);
       });
       anchors.find(a => a.kind === "projects").pos.set(0, 3.72, -0.75);
@@ -212,7 +215,7 @@ export function createRoom(container, P, opts) {
     camera.aspect = aspect;
     if (aspect < 0.9) { camera.fov = 62; camGoal.set(0, 3.5, 8.7); controls.target.set(0, 2.55, -1.2); holo.position.set(1.45, 0, 1.3); sign.position.y = 4.92; sub.position.y = 5.34; aboutAnchor.pos.set(-0.75, 1.25, -3.2); }
     else { camera.fov = 48; camGoal.set(0, 2.45, 6.4); controls.target.set(0, 2.15, -1.4); holo.position.set(3.1, 0, 0.9); sign.position.y = 4.2; sub.position.y = 4.85; aboutAnchor.pos.set(-1.38, 2.12, -3.9); }
-    holoAnchor.pos.set(holo.position.x, 2.75, holo.position.z);
+    holoAnchor.pos.set(holo.position.x, aspect < 0.9 ? 2.32 : 2.75, holo.position.z); // phone: sit just above the orb, clear of the second panel row
     camera.updateProjectionMatrix();
     layoutPanels(aspect);
     renderer.setSize(w, h);
@@ -293,7 +296,7 @@ export function createRoom(container, P, opts) {
       pn.hover += ((isH || isF ? 1 : 0) - pn.hover) * Math.min(1, dt * 8);
       pn.g.position.set(pn.base.x, pn.base.y + Math.sin(t * 1.1 + pn.i * 0.9) * 0.06, pn.base.z + pn.hover * 0.25);
       pn.g.lookAt(camera.position.x * 0.35 + pn.base.x * 0.65, pn.g.position.y - 0.2, camera.position.z);
-      pn.g.scale.setScalar(1 + pn.hover * 0.1);
+      pn.g.scale.setScalar((pn.s || 1) * (1 + pn.hover * 0.1));
       pn.halo.material.opacity = 0.18 + pn.hover * 0.35 + Math.sin(t * 2 + pn.i) * 0.04;
     }
     shell.material.opacity = 0.35 + (hovered === hit ? 0.35 : 0);

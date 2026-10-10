@@ -75,7 +75,8 @@ export function createAssistant(P) {
     "trip-planner": ["trip", "travel", "planner", "itinerar"],
     "minifier": ["minif", "cleancode", "clean code", "symbol table", "compiler"],
     "luxe-salon": ["salon", "luxe", "landing page"],
-    "clash-hub": ["clash", "royale", "deck", "game stats"]
+    "clash-hub": ["clash", "royale", "deck", "game stats"],
+    "sh-valo-tracker": ["valo", "riot id", "riot", "crosshair", "android", "apk", "pwa", "player tracker", "rank tracker", "tracker"]
   };
 
   const allSkills = new Set();

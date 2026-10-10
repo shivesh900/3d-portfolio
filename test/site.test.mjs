@@ -56,4 +56,9 @@ test("assistant answers the core recruiter questions", async () => {
   assert.match(ask("who are you"), /NOVA/);
   assert.match(ask("what is the weather on mars"), /not sure/);
   assert.match(ask("best project"), /NeuroSy-RAG/);
+  assert.match(ask("What projects has he built?"), /SH VALO TRACKER/);
+  assert.match(ask("tell me about the valorant tracker"), /SH VALO TRACKER: Valorant player tracker/);
+  assert.match(ask("is there an android app?"), /SH VALO TRACKER/);
+  assert.match(ask("tell me about the trip planner"), /^AI Trip Planner: /);
+  assert.match(ask("tell me about the language detector"), /11 languages|Language/);
 });
