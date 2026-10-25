@@ -190,12 +190,25 @@ export function createRoom(container, P, opts) {
   function layoutPanels(aspect) {
     const n = panels.length;
     if (aspect < 0.9) {
-      const rows = [panels.slice(0, 4), panels.slice(4)];
+      // phone: rows of 4 (three rows once there are more than 8 panels)
+      const per = 4, rows = [];
+      for (let k = 0; k < n; k += per) rows.push(panels.slice(k, k + per));
+      const three = rows.length > 2, s = three ? 0.86 : 1, step = three ? 1.14 : 1.3;
+      const ys = three ? [3.72, 3.0, 2.28] : [3.42, 2.6];
       rows.forEach((row, r) => row.forEach((pn, j) => {
-        const x = (j - (row.length - 1) / 2) * 1.3;
-        pn.s = 1; pn.base.set(x, r === 0 ? 3.42 : 2.6, -0.8);
+        const x = (j - (row.length - 1) / 2) * step;
+        pn.s = s; pn.base.set(x, ys[r] ?? ys[ys.length - 1], -0.8);
       }));
-      anchors.find(a => a.kind === "projects").pos.set(0, 4.02, -0.8);
+      anchors.find(a => a.kind === "projects").pos.set(0, three ? 4.24 : 4.02, -0.8);
+    } else if (n > 8) {
+      // desktop with many projects: two staggered rows
+      const per = Math.ceil(n / 2), step = Math.min(1.36, 8.2 / Math.max(1, per - 1)), s = Math.min(0.86, (step - 0.1) / 1.22);
+      panels.forEach((pn, j) => {
+        const r = j < per ? 0 : 1, k = r ? j - per : j, cnt = r ? n - per : per;
+        const x = (k - (cnt - 1) / 2) * step - 0.25;
+        pn.s = s; pn.base.set(x, r ? 2.5 : 3.2, -0.9 - 0.025 * x * x);
+      });
+      anchors.find(a => a.kind === "projects").pos.set(0, 3.78, -0.75);
     } else {
       // more than 7 panels: pack closer, shrink slightly and nudge left so the last one clears the Skills / NOVA labels
       const step = Math.min(1.42, 8.2 / Math.max(1, n - 1)), s = Math.min(1, (step - 0.12) / 1.22), dx = n > 7 ? -0.3 : 0;

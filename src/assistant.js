@@ -60,7 +60,7 @@ const SKILL_ALIASES = {
   "MySQL": ["mysql"], "MongoDB": ["mongodb", "mongo"], "NLP": ["nlp", "natural language"], "RAG": ["rag", "retrieval"],
   "Machine Learning": ["machine learning", "ml"], "Deep Learning": ["deep learning"], "Classification": ["classification"], "Regression": ["regression"], "Clustering": ["clustering"],
   "Supervised Learning": ["supervised"], "Unsupervised Learning": ["unsupervised"], "Node.js": ["nodejs", "node"], "Next.js": ["nextjs"], "Figma": ["figma"],
-  "Java": ["java"], "Kotlin": ["kotlin"], "Go": ["golang"], "Rust": ["rust"], "TensorFlow": ["tensorflow", "keras"], "Docker": ["docker"], "Kubernetes": ["kubernetes", "k8s"],
+  "Java": ["java"], "Kotlin": ["kotlin"], "Go": ["golang"], "Rust": ["rust"], "TensorFlow": ["tensorflow", "keras"], "Docker": ["docker"], "FastAPI": ["fastapi"], "Unity": ["unity"], "C#": ["c#", "csharp"], "FFmpeg": ["ffmpeg"], "Firebase": ["firebase", "firestore"], "Kubernetes": ["kubernetes", "k8s"],
   "Azure": ["azure"], "GCP": ["gcp", "google cloud"], "Angular": ["angular"], "Vue": ["vue"], "Django": ["django"], "Spring": ["spring boot", "spring"], "PHP": ["php"], "Tableau": ["tableau"], "Excel": ["excel"],
   "GitHub Actions": ["github actions", "ci/cd", "cicd"], "Three.js": ["three.js", "threejs", "webgl"], "LLMs": ["llm", "llms", "genai", "generative ai", "gpt"], "Computer Vision": ["computer vision", "opencv", "cv model"]
 };
@@ -69,10 +69,13 @@ export function createAssistant(P) {
   const ctx = { lastProject: null, lastTopic: null };
   const projById = Object.fromEntries(P.projects.map(p => [p.id, p]));
   const PROJ_ALIASES = {
+    "lecturemind": ["lecturemind", "lecture mind", "lecture", "transcri", "whisper", "speech", "asr", "flashcard", "quiz", "knowledge map", "threat", "harsh", "profanity"],
+    "smart-city": ["smart city", "digital twin", "unity", "traffic", "city", "simulation", "signal", "emergency"],
+    "sh-planner": ["sh planner", "schedule", "notebook", "habit", "reminder", "firebase", "capacitor", "to-do", "todo"],
     "neurosy-rag": ["neurosy", "neuro", "neuro-symbolic", "neurosymbolic", "healthcare", "medical", "disease", "diagnos", "clinical", "health"],
     "resume-scanner": ["resume scanner", "scanner", "segregator", "recruitment", "shortlist", "ats", "parser", "resume pars"],
     "lang-intel": ["language intelligence", "language detect", "nlp project", "tamil", "hindi", "translation", "detector"],
-    "trip-planner": ["trip", "travel", "planner", "itinerar"],
+    "trip-planner": ["trip", "travel", "trip planner", "itinerar"],
     "minifier": ["minif", "cleancode", "clean code", "symbol table", "compiler"],
     "luxe-salon": ["salon", "luxe", "landing page"],
     "clash-hub": ["clash", "royale", "deck", "game stats"],

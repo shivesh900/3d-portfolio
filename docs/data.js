@@ -55,10 +55,10 @@ window.PORTFOLIO = {
   ],
 
   skills: {
-    "Languages": ["Python", "C++", "SQL", "JavaScript", "TypeScript"],
+    "Languages": ["Python", "C++", "SQL", "JavaScript", "TypeScript", "C#"],
     "Machine Learning": ["Supervised Learning", "Unsupervised Learning", "Classification", "Regression", "Clustering", "NLP", "RAG"],
-    "Libraries & Frameworks": ["PyTorch", "Scikit-learn", "Pandas", "NumPy", "Flask", "React", "Express", "Streamlit", "Tailwind CSS"],
-    "Tools & Platforms": ["Git", "GitHub", "AWS", "Power BI", "Vercel"],
+    "Libraries & Frameworks": ["PyTorch", "Scikit-learn", "Pandas", "NumPy", "FastAPI", "Flask", "React", "Express", "Streamlit", "Tailwind CSS"],
+    "Tools & Platforms": ["Git", "GitHub", "Docker", "FFmpeg", "Unity", "Firebase", "AWS", "Power BI", "Vercel"],
     "Databases": ["MySQL", "MongoDB"]
   },
   // Where each skill shows up in real work (used by the assistant as evidence).
@@ -112,6 +112,48 @@ window.PORTFOLIO = {
       live: "https://shivesh900.github.io/neurosy-rag/"
     },
     {
+      id: "lecturemind",
+      name: "LectureMind AI",
+      subtitle: "AI lecture transcription & knowledge extraction",
+      period: "Oct 2026",
+      category: "AI / ML · Full-stack",
+      featured: true,
+      color: "#8b7bff",
+      summary: "Upload a lecture recording and get a timestamped transcript, summaries, notes, quizzes, flashcards, a knowledge map and a chat that answers only from the lecture.",
+      points: [
+        "Full-stack platform: React + Vite + TypeScript + Tailwind frontend, FastAPI + MongoDB backend.",
+        "Pipeline: FFmpeg audio extraction, faster-whisper speech recognition, then chunked map-reduce summaries with schema-validated JSON outputs and per-step status with retries.",
+        "Study tools: timestamped transcript with click-to-seek audio, smart notes, quiz with scoring, flashcards, an interactive knowledge-map graph and grounded chat with timestamp citations.",
+        "Harsh / threatening language detection: flags profanity, insults and threats (English, Hinglish, Tamil-English) with severity and timestamps.",
+        "JWT httpOnly-cookie auth with bcrypt and ownership checks, covered by 82 automated tests. The live demo runs in demo mode (real Whisper transcription, keyword-based study material) until an OpenAI key is added."
+      ],
+      stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "FastAPI", "MongoDB", "faster-whisper", "FFmpeg", "OpenAI API"],
+      facts: ["82 automated tests (pytest)", "Live demo runs without an OpenAI key in a clearly labelled demo mode"],
+      github: "https://github.com/shivesh900/lecturemind-ai",
+      live: "https://lecturemind.sites.tab.bot/"
+    },
+    {
+      id: "smart-city",
+      name: "Smart City Digital Twin",
+      subtitle: "AI-powered city simulation in Unity 6",
+      period: "Oct 2026",
+      category: "Simulation · Unity",
+      featured: true,
+      color: "#4fa3ff",
+      summary: "A procedurally generated 3D city with live traffic, adaptive signals, incidents, emergency dispatch, pollution and energy layers, and a control-room dashboard.",
+      points: [
+        "Procedurally generated city in Unity 6 (URP) with a live traffic simulation; the same seed always rebuilds the same city.",
+        "A* route planning reroutes vehicles around incidents and congestion.",
+        "Adaptive queue-based traffic-signal optimizer with an A/B comparison against fixed timing.",
+        "Incident simulation and emergency-vehicle dispatch, plus pollution and energy monitoring with trend forecasting.",
+        "Transparent decision support (rules, A* search and trend forecasting, no trained ML model), with 28 NUnit tests."
+      ],
+      stack: ["Unity 6", "C#", "URP", "A* Search", "NUnit"],
+      facts: ["28 NUnit tests", "All data on screen is simulated and labelled that way"],
+      github: "https://github.com/shivesh900/smart-city-digital-twin",
+      live: null
+    },
+    {
       id: "resume-scanner",
       name: "Resume Scanner Segregator",
       subtitle: "AI recruitment screening system",
@@ -131,6 +173,25 @@ window.PORTFOLIO = {
       facts: ["Scores candidates on skills match, TF-IDF similarity to the job description and experience", "Flask API, React dashboard and a CLI, covered by 29 automated tests"],
       github: "https://github.com/shivesh900/resume-scanner-segregator",
       live: "https://shivesh900.github.io/resume-scanner-segregator/"
+    },
+    {
+      id: "sh-planner",
+      name: "SH PLANNER",
+      subtitle: "Schedule planner + notebook, web + Android app",
+      period: "Oct 2026",
+      category: "Productivity · Web + Android",
+      color: "#ffd166",
+      summary: "A planner and notebook in one: day/week/month planning, reminders, notes linked to tasks, habits and quick capture. Works offline and syncs with Google sign-in.",
+      points: [
+        "Day, week and month planning with reminders, notes linked to tasks, a notebook with folders and images, habits and quick capture.",
+        "Offline-first PWA on IndexedDB with JSON backup and .ics export.",
+        "Google sign-in with Firebase Auth and Firestore cloud sync (per-user security rules, tombstone deletes and merge).",
+        "Android app built with Capacitor, with real local-notification alarms."
+      ],
+      stack: ["JavaScript", "PWA", "IndexedDB", "Firebase Auth", "Firestore", "Capacitor", "Android"],
+      facts: [],
+      github: "https://github.com/shivesh900/sh-planner",
+      live: "https://shivesh900.github.io/sh-planner/"
     },
     {
       id: "lang-intel",
